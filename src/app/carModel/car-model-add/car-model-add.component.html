@@ -1,0 +1,43 @@
+<div class="content-wrapper">
+  <section class="content-header">
+      <h1>
+        Add Car Model 
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="javascript:void(0);" routerLink="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li> 
+        <li><a href="javascript:void(0);" routerLink="/car-model"> Car Model</a></li> 
+        <li class="active">Add Car Model</li>
+      </ol>
+    </section>
+  <!-- Main content -->
+  <section class="content"> 
+      <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+          <div class="box-body box box-primary">
+              <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{message.text}}</div> 
+                <div class="row">
+                  <div class="col-md-6"> 
+                      <div class="form-group">
+                          <label>Car Model and Color</label>
+                          <input type="text" formControlName="name" class="form-control" placeholder="Full Name"  [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
+                          <div *ngIf="submitted && f.name.errors && f.name.errors.required" class="error">Car Model and Color is required</div>
+                      </div> 
+                  </div>
+                </div>    
+                <div class="row">  
+                  <div class="col-md-6"> 
+                      <div class="form-group">
+                          <label>Qty of Passenger</label>
+                          <input type="text" formControlName="qty_of_passenger" class="form-control" placeholder="Qty of Passenger">
+                          <div *ngIf="submitted && f.qty_of_passenger.errors && f.qty_of_passenger.errors.required" class="error">Qty of Passenger is required</div>
+                          <div *ngIf="submitted && f.qty_of_passenger.errors && f.qty_of_passenger.errors.pattern" class="error">Qty of Passenger must be number</div>
+                      </div> 
+                  </div>    
+              </div> 
+              <div class="box-footer">
+                  <button class="btn btn-primary btn-flat" type="submit" >Save</button> &nbsp; &nbsp;
+                  <a class="btn btn-danger btn-flat" href="javascript:void(0);" routerLink="/car-model" >Cancel</a>
+              </div> 
+          </div>
+      </form> 
+  </section>
+</div>  

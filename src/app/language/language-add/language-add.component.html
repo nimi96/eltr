@@ -1,0 +1,42 @@
+<div class="content-wrapper">
+  <section class="content-header">
+      <h1>
+        Add Language 
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="javascript:void(0);" routerLink="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li> 
+        <li><a href="javascript:void(0);" routerLink="/language"> Language</a></li> 
+        <li class="active">Add Language</li>
+      </ol>
+    </section>
+  <!-- Main content -->
+  <section class="content"> 
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+          <div class="box-body box box-primary">
+              <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{message.text}}</div> 
+                <div class="row">
+                  <div class="col-md-6"> 
+                      <div class="form-group">
+                          <label>Name</label>
+                          <input type="text" formControlName="name" class="form-control" placeholder="Name"  [ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
+                          <div *ngIf="submitted && f.name.errors && f.name.errors.required" class="error">Name is required</div>
+                      </div> 
+                  </div>
+                </div>    
+                <div class="row">  
+                  <div class="col-md-6"> 
+                      <div class="form-group">
+                          <label>Language code</label>
+                          <input type="text" formControlName="lang_code" class="form-control" placeholder="Language code">
+                          <div *ngIf="submitted && f.lang_code.errors && f.lang_code.errors.required" class="error">Language code is required</div> 
+                      </div> 
+                  </div>    
+              </div> 
+              <div class="box-footer">
+                  <button class="btn btn-primary btn-flat" type="submit" >Save</button> &nbsp; &nbsp;
+                  <a class="btn btn-danger btn-flat" href="javascript:void(0);" routerLink="/language" >Cancel</a>
+              </div> 
+          </div>
+      </form> 
+  </section>
+</div>  

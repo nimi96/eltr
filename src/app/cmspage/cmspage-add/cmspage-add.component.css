@@ -1,0 +1,7 @@
+.tab-pane.fade  {
+    display: none;
+}
+
+.tab-pane.fade.active.cms_multi_lang {
+    display: block;
+}

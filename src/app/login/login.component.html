@@ -1,0 +1,59 @@
+<!-- <div class="container">
+  <form class="form-signin" (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="alert alert-warning alert-dismissible" role="alert" *ngIf="message !== ''">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{message}}
+      </div>
+      <h2 class="form-signin-heading">Please sign in</h2>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" class="form-control" placeholder="Email address" [(ngModel)]="loginData.username" name="username" required/>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" class="form-control" placeholder="Password" [(ngModel)]="loginData.password" name="password" required/>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.form.valid">Sign in</button>
+      
+  </form>
+</div>
+
+ -->
+
+<div class="login-box login-page">
+  <div class="login-logo">
+    <a href="/"><img src="assets/dist/img/logo.png" alt="" srcset=""></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign In</p>
+
+    <form class="form-signin" (ngSubmit)="login()" #loginForm="ngForm">
+        <div class="alert alert-warning alert-dismissible" role="alert" *ngIf="message !== ''">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          {{message}}
+        </div>  
+      <div class="form-group has-feedback"> 
+        <input type="email" class="form-control" placeholder="Email address" [(ngModel)]="loginData.username" name="username" required/>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback"> 
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="loginData.password" name="password" required/>
+
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-4"> 
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">  
+          <button class="btn btn-primary btn-block btn-flat" type="submit" [disabled]="!loginForm.form.valid">Sign in</button>
+         <!--  <p>
+              Not a member? <a [routerLink]="['/signup']">Signup here</a>
+          </p> -->
+        </div>
+        <div class="col-xs-4"> 
+        </div>
+        <!-- /.col -->
+      </div>
+    </form> 
+    <!-- <a href="#">I forgot my password</a><br>  -->
+  </div>
+  <!-- /.login-box-body -->
+</div>

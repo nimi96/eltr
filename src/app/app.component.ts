@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data/data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mean-secure';
+  userLogin: string;
+  isUserLoggedIn:boolean;
+
+  constructor(private dataS: DataService) { }
+  
+  ngOnInit() {
+    this.userLogin = localStorage.getItem('jwtToken'); 
+    this.dataS.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;
+    }); 
+  }
 }

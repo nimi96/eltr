@@ -1,0 +1,82 @@
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard 
+      </h1> 
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>{{ totalPassenger }}</h3>
+
+              <p>Total Users</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="javascript:void(0);" routerLink="/users/passenger" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>{{ totalDriver }}</h3>
+
+              <p>Total Drivers</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <a href="javascript:void(0);" routerLink="/users/driver" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>{{ totalOffer }}</h3>
+
+              <p>Total Offers</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-gift"></i>
+            </div>
+            <a href="javascript:void(0);" routerLink="/offer" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>{{ totalCarmodel }}</h3>
+
+              <p>Car Models</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-cab"></i>
+            </div>
+            <a href="javascript:void(0);" routerLink="/car-model" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div> 
+    </section>  
+    <!-- /.content -->
+  </div>
+
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="application-a/assets/dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="application-a/assets/dist/js/demo.js"></script>

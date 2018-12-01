@@ -1,0 +1,17 @@
+<div class="box-footer clearfix">
+  <ul class="pagination pagination-sm no-margin pull-right">
+    <li [ngClass]="{'disabled': 1 > currentpage}"> 
+      <a href="javascript:void(0)" *ngIf="currentpage > 1;else preLi" (click)="nextPage(currentpage-1)">&laquo;</a>
+      <ng-template #preLi>
+          <a class="disable-paginate" href="javascript:void(0)">&laquo;</a>
+      </ng-template>
+    </li>  
+    <li *ngFor="let item of pgaeLinkArr; let i = index;" [ngClass]="{'active': currentpage == item.key}"><a href="javascript:void(0)" (click)="nextPage(item.key)">{{ item.key }}</a></li> 
+    <li [ngClass]="{'disabled':currentpage > pages}">
+      <a href="javascript:void(0)" *ngIf="pages > currentpage;else nextLi" (click)="nextPage(currentpage+1)">&raquo;</a>
+      <ng-template #nextLi>
+          <a class="disable-paginate" href="javascript:void(0)">&raquo;</a>
+      </ng-template>
+    </li> 
+  </ul> 
+</div>

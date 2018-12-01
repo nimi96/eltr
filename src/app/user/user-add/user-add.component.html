@@ -1,0 +1,43 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+          Add Passenger 
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="javascript:void(0);" routerLink="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li> 
+          <li><a href="javascript:void(0);" routerLink="/users/passenger"> User Management</a></li> 
+          <li class="active">Add Passenger</li>
+        </ol>
+      </section>
+    <!-- Main content -->
+    <section class="content"> 
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="box-body box box-primary">
+                <ng-flash-message></ng-flash-message> 
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" formControlName="full_name" class="form-control" placeholder="Full Name"  [ngClass]="{ 'is-invalid': submitted && f.full_name.errors }" >
+                            <div *ngIf="submitted && f.full_name.errors && f.full_name.errors.required" class="error">Full name is required</div>
+                        </div> 
+                    </div>  
+                </div>  
+                <div class="row"> 
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" formControlName="phone_number" class="form-control" placeholder="Phone Number">
+                            <div *ngIf="submitted && f.phone_number.errors && f.phone_number.errors.required" class="error">Phone number is required</div>
+                            <div *ngIf="submitted && f.phone_number.errors && f.phone_number.errors.pattern" class="error">Phone number must be number</div>
+                        </div> 
+                    </div>  
+                </div> 
+                <div class="box-footer">
+                    <button class="btn btn-primary btn-flat" type="submit" >Save</button> &nbsp; &nbsp;
+                    <a class="btn btn-danger btn-flat" href="javascript:void(0);" routerLink="/users/passenger" >Cancel</a>
+                </div> 
+            </div>
+        </form> 
+    </section>
+</div>  

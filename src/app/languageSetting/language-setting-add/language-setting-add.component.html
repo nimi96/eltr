@@ -1,0 +1,43 @@
+<div class="content-wrapper">
+	<section class="content-header">
+		  <h1>
+			  Add Text
+		  </h1>
+		  <ol class="breadcrumb">
+        <li><a href="javascript:void(0);" routerLink="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li> 
+        <li><a href="javascript:void(0);" routerLink="/dashboard"><i class="fa fa-dashboard"></i> Language Setting</a></li> 
+        <li class="active">Add Text</li>
+		  </ol>
+	</section>
+	<!-- Main content -->
+	<section class="content">
+      <form [formGroup]="addForm"  (ngSubmit)="onSubmit()">
+          <div class="box-body box box-primary">    
+              <div class="row">
+                  <div class="col-md-6"> 
+                      <div class="form-group">
+                          <label>Default *</label>
+                          <input type="text" [formControl]="addForm.get('name')" class="form-control">
+                          <div *ngIf="submitted && !addForm.controls.name.valid" class="error">Default name is required</div>
+                      </div> 
+                  </div>  
+              </div>   
+              <div formGroupName="title"> 
+                  <div class="row" *ngFor="let day of title">
+                    <div class="col-md-6"> 
+                        <div class="form-group">
+                            <label>{{day.name}}</label>
+                            <input type="text" [formControlName]="day.value" class="form-control" >
+                            <div *ngIf="submitted && !addForm.controls.title.valid" class="error">{{day.name}} is required</div>
+                        </div> 
+                    </div>  
+                  </div>  
+              </div>  
+            <div class="box-footer">
+                <button class="btn btn-primary btn-flat" type="submit" >Save</button> &nbsp; &nbsp;
+                <a class="btn btn-danger btn-flat" href="javascript:void(0);" routerLink="/car-model" >Cancel</a>
+            </div>  
+          </div>  
+      </form>  
+	</section>
+</div>  
